@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+    <body>
+        
+      <table>
+        <h1> Currency converter</h1>
+        <tr>
+          
+            <td>Dollar</td>
+            <td>&nbsp;</td>
+            <td>Rupee</td>
+
+        </tr>
+        <tr>
+            <td><input type="text" id="dollar"/></td>
+            <td><big>=</big></td>
+            <td><input type="text" id="rupee"/></td>
+        </tr>
+       </table>
+       <script>
+        var dollar=document.getElementById('dollar');
+        var rupee=document.getElementById('rupee');
+
+        dollar.addEventListener('input',function(){
+        var d=this.value;
+        var r=d*85;
+        rupee.value=r;
+
+        });
+
+        rupee.addEventListener('input',function(){
+        var r=this.value;
+        var d=r/85;
+        if(!Number.isInteger(d)){
+            d=d.toFixed(2);
+        }
+        dollar.value=d;
+    });
+
+       </script>
+    </body>
+`   </html>
